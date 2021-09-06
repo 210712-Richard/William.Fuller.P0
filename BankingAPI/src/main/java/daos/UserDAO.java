@@ -11,6 +11,9 @@ import java.util.List;
 
 public class UserDAO implements Dao<User> {
 
+	public UserDAO(Connection connection) {
+	}
+
 	@Override
 	public User get(int id) {
 		// TODO Auto-generated method stub

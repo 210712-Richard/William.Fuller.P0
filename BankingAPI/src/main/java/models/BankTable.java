@@ -24,7 +24,7 @@ public class BankTable {
 		this.name = name;
 	}
 	public void setAccount(HashMap <Integer, Integer> account) {
-		this.accounts = account;
+		this.accounts = accounts;
 	}
 	public Map getAccount() {
 		return this.accounts;

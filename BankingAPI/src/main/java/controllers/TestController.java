@@ -1,11 +1,11 @@
 package controllers;
 
-import daos.BankTableDAO;
-import daos.TestTableDAO;
+import daos.UserDAO;
+import daos.Dao;
 import exceptions.NoSQLResultsException;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
-import models.TestTable;
+import models.User;
 import utils.ConnectionFactory;
 
 import java.sql.SQLException;
@@ -27,14 +27,14 @@ public class TestController {
     }
 
     public static void insertTestData(Context ctx) throws SQLException {
-        BankTableDAO dao = new BankTableDAO(ConnectionFactory.getConnection());
-        BankTable row = ctx.bodyAsClass(BankTable.class);
+        UserDAO dao = new UserDAO(ConnectionFactory.getConnection());
+        User row = ctx.bodyAsClass(User.class);
         dao.save(row);
     }
 
     public static void getById(Context ctx) throws SQLException, NoSQLResultsException {
-        BankTableDAO dao = new BankTableDAO(ConnectionFactory.getConnection());
-        BankTable row = dao.get(Integer.parseInt(ctx.pathParam("id")));
+        UserDAO dao = new UserDAO(ConnectionFactory.getConnection());
+        User row = dao.get(Integer.parseInt(ctx.pathParam("id")));
         ctx.json(row);
     }
 

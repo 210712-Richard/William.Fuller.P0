@@ -4,9 +4,8 @@ import java.util.HashMap;
 import java.util.Set;
 
 public class User {
-	private String name; //name of client
-	private int id; //randomly assigned client ID 
-	
+	private String name;
+	private int id;
 	//hashmap of accounts <AccountID, Balance>
 	//(AccountID will be randomly assigned)
 	private HashMap<Integer, Integer> accounts = new HashMap<Integer, Integer>();
@@ -23,7 +22,6 @@ public class User {
 		this(name, new HashMap<Integer, Integer>());
 	}
 
-	//typical getters and setters
 	public String getName() {
 		return name;
 	}

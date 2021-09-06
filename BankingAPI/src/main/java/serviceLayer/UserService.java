@@ -7,8 +7,8 @@ import models.User;
 
 public class UserService {
 	
-	private String name; //name of client
-	private int id; //randomly assigned client ID 
+	private String name;
+	private int id;
 	
 	
 	
